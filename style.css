@@ -1,15 +1,22 @@
+html, body { 
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Amatic SC', cursive; */
   font-family: 'Julius Sans One', sans-serif;
   line-height: 2;
   scroll-behavior: smooth;
 }
 
-#exp, #s, #con {
-  scroll-margin-top: 20px;
+li {
+  margin-left: 13px;
+}
+
+#exp, #proj, #s {
+  scroll-margin-top: 25px;
 }
 
 .container {
@@ -18,36 +25,35 @@
 }
 
 #landingPage {
-  margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 35px;
+  white-space: nowrap;
 }
 
 #rose {
-  margin-left: 0;
+  width: 250px;
   position: absolute;
   top: 45%;
   left: 72%;
   transform: translate(-50%, -50%);
-  width: 250px;
 }
 
 #nav {
-  width: 5%;
+  width: 70px;
   height: 100vh;
   text-align: center;
   position: fixed;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* padding: 19% 0; */
 }
 
 .textBoxes {
   width: 70%;
   margin: auto;
+  padding-bottom: 1px;
 }
 
 .titleBoxes {
@@ -65,128 +71,45 @@ i {
   width: 100%;
 }
 
-.bar1 { grid-area: python; }
-.bar2 { grid-area: java; }
-.bar3 { grid-area: javascript; }
-.bar4 { grid-area: xml; }
-.bar5 { grid-area: html; }
-.bar6 { grid-area: css; }
-
-.grid {
-  display: grid;
-  grid-template-areas:
-  'python'
-  'java'
-  'javascript'
-  'xml'
-  'html'
-  'css';
-  grid-gap: 5px;
-}
-
-.textfields {
-  width: 100%;
-  margin: 50px auto auto;
-  color: black;
-  position: relative;
-}
-
-.textfields .floating-label {
-	position: absolute;
-	pointer-events: none;
-	top: -5px;
-	left: 10px;
-  font-size: 19px;
-	transition: 0.2s ease all;
-}
-.textfields input:focus ~ .floating-label,
-.textfields input:not(:focus):valid ~ .floating-label{
-	top: -15px;
-	left: 10px;
-	font-size: 15px;
-	opacity: 1;
-}
-
-.textfields input {
-  width: 100%;
-  padding: 5px;
-  box-sizing:border-box;
-  border-color: transparent;
-  border-bottom-color: black;
-  margin-top: 5px;
-  margin: auto;
-  font-size: 17px;
-}
-
-input:hover, input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-  border-bottom-color: lightgrey;
-}
-
-.send{
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.btn {
-  padding: 1px 7px 1px;
-  background-color: white;
-  font-size: 17px;
-  color: black;
-  border-color: black;
-}
-
-.contactForm {
-  width: 100%;
-  margin: auto;
-}
-
-form {
-  width: 75%;
-  border: double black 6px;
-  padding: 30px 50px 0;
-  margin: auto;
-}
-
-
-
-.tf1 { grid-area: name; }
-.tf2 { grid-area: email; }
-.tf3 { grid-area: subject; }
-.tf4 { grid-area: message; }
-
-.contactForm {
-  display: grid;
-  grid-template-areas:
-  'name'
-  'email'
-  'subject'
-  'message';
-  grid-row-gap: 0px;
-}
+.bar1 { grid-area: java; }
+.bar2 { grid-area: python; }
+.bar3 { grid-area: c; }
+.bar4 { grid-area: cpp; }
+.bar5 { grid-area: sql; }
+.bar6 { grid-area: js; }
+.bar7 { grid-area: html; }
+.bar8 { grid-area: xml; }
 
 #beforeLink {
   margin-bottom: 90px;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 1000px) and (max-width: 1300px) {
   #landingPage {
-    font-size:21px;
+    font-size:30px;
+    top: 50%;
+  }
+
+  #rose {
+    top: 70%;
+    left: 50%;
+    width: 150px;
+  } 
+}
+
+@media (max-width: 1000px) {
+  #landingPage {
+    font-size:25px;
     top: 45%;
   }
 
   #rose {
-    top: 30%;
+    top: 64%;
     left: 50%;
     width: 120px;
   }
 
   #nav {
-    width: 50px;
     visibility: hidden;
   }
 
@@ -214,18 +137,6 @@ form {
     margin-bottom: 50px;
   }
 
-  form {
-    width: 100%;
-  }
-
-  .textfields {
-    width: 100%;
-    margin: 25px auto auto;
-  }
-  
-  .textfields input {
-    font-size: 15px;
-  }
   .titleBoxes {
     padding: 3px 13px;
     font-size: 15px;
@@ -237,19 +148,11 @@ form {
   .grid {
     display: grid;
     grid-template-areas:
-    'python java'
-    'javascript xml'
-    'html css';
+    'c python'
+    'cpp java'
+    'sql js'
+    'html xml';
     grid-row-gap: 5px;
     grid-column-gap: 50px;
   }
-
-  .contactForm {
-    display: grid;
-    grid-template-areas:
-    'name email subject'
-    'message message message';
-    grid-column-gap: 30px;
-  }
-
 }
